@@ -1,84 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thala for Reason</title>
-  <style>
-    #ev {
-      font-size: 24px;
-      align-items: center;
-    }
-    input {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-top: 40px;
-    }
-    button {
-      margin: 20px;
-      padding: 10px 15px;
-      background: linear-gradient(to right, #3498db, #2ecc71);
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    div {
-      width: 600px;
-      height: 400px;
-      background-color: #f2f2f2;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 20px;
-    }
-  </style>
-</head>
-<body>
-  <center>
-    <input id="i1" required />
-    <br />
-    <button onclick="thala()">Check</button>
-    <div id="ev"></div>
-  </center>
-  <script>
-    function thala() {
-      var i1 = document.getElementById("i1").value;
-      var len = i1.length;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thala for Reason</title>
+    <style>
+      #ev {
+        font-size: 24px;
+        align-items: center;
+      }
+      input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 40px;
+      }
+      button {
+        margin: 20px;
+        padding: 10px 15px;
+        background: linear-gradient(to right, #3498db, #2ecc71);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      div {
+        width: 600px;
+        height: 400px;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <input id="i1" required />
+      <br />
+      <button onclick="thala()">Check</button>
+      <div id="ev"></div>
+    </center>
+    <script>
+      function thala() {
+        var i1 = document.getElementById("i1").value;
+        var len = i1.length;
 
-      var iframeElement = document.createElement('iframe');
-      iframeElement.src = 'https://memes.co.in/embed,898';
-  
-  
+        var iframeElement = document.createElement("iframe");
+        iframeElement.src = "https://memes.co.in/embed,898";
 
-    iframeElement.width = '100%';
-    iframeElement.height = '80%';
+        iframeElement.width = "100%";
+        iframeElement.height = "80%";
 
-    iframeElement.frameborder = '0'; 
-  iframeElement.allow = 'autoplay;encrypted-media';
-  
-    var myDiv = document.getElementById('ev');
+        iframeElement.frameborder = "0";
+        iframeElement.allow = "autoplay;encrypted-media";
+       
 
-      if (len == 7) {
-        document.getElementById("ev").innerHTML = "Thala for Reason";
-        myDiv.appendChild(iframeElement);
-      } else if (!isNaN(i1)) {
-        var s = 0;
-
-        for (let digit of i1) {
-          s += parseInt(digit);
-        }
-        
-        if (s == 7) {
+        if (len == 7) {
           document.getElementById("ev").innerHTML = "Thala for Reason";
           myDiv.appendChild(iframeElement);
+        } 
+        else if (!isNaN(i1)) {
+          var s = 0;
+
+          for (let digit of i1) {
+            s += parseInt(digit);
+          }
+
+          if (s == 7) {
+            document.getElementById("ev").innerHTML = "Thala for Reason";
+            myDiv.appendChild(iframeElement);
+          }
+        } else {
+          document.getElementById("ev").innerHTML = "You're not a Thala fan!";
+          let img = document.createElement("img");
+          img.src = "https://i.ytimg.com/vi/52LJfV1CE6c/hqdefault.jpg";
+          
+        var myDiv = document.getElementById("ev");
+          myDiv.appendChild(img);  
+
         }
-      } else {
-        document.getElementById("ev").innerHTML = "You're not a Thala fan!";
       }
-    
-    }
-  </script>
-</body>
+      
+    </script>
+  </body>
 </html>
